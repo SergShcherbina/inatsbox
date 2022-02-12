@@ -1,0 +1,61 @@
+.basement {
+    padding: 40px 0;
+    background: $txt-color;
+    &__wrapper {
+        display: grid;
+        grid-template: auto / repeat(2, 220px) ;
+        column-gap: 30px;
+        justify-content: space-around;
+    }
+    &__item {
+        position: relative;
+        font-size: 14px;
+        color: aliceblue;
+        list-style-type: none;
+        line-height: 30px;
+        padding-left: 8px;
+        margin-left: 19px;
+        a {
+            color: aliceblue;
+        }
+        &_phone, &_inst, &_viber, &_email {
+            &:before {
+                content: "";
+                position: absolute;
+                left: -20px;
+                top: 1px;
+                width: 23px;
+                height: 23px;
+                
+            }
+        }
+        &_phone {
+            &:before {
+                content: "";
+                background: url('../icons/social/phone-white.svg') center/cover no-repeat;
+                }
+        }
+        &_inst {
+            &:before {
+                content: "";
+                background: url('../icons/social/Instagram-white.svg') center/cover no-repeat;
+                }
+        }
+        &_viber {
+            &:before {
+                content: "";
+                background: url('../icons/social/viber-white.svg') center/cover no-repeat;
+                }
+        }
+        &_email {
+            &:before {
+                content: "";
+                background: url('../icons/social/mail-white.svg') center/cover no-repeat;
+                }
+        }
+      
+    }
+    &__title {
+        color: aliceblue;
+    }
+}

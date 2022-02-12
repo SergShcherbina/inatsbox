@@ -1,0 +1,32 @@
+.btn {
+    margin-top: 20px;
+    display: flex;
+    width: 195px;  
+    height: 50px;
+    background-color: $main-color;
+    border-radius: 6px;
+    align-items:center;
+    justify-content: center;
+    transition: .5s all;
+    a {
+        padding: 5px 35px;
+        font-size: 20px;
+        font-weight: bold; 
+        color: #ffffff;
+        &:hover {
+            text-decoration: none;
+           
+        }
+    }
+    &:hover {
+        background: #6716bf;
+        
+    }
+    &_form {
+        width: 100%;
+        color: #ffffff;
+        font-size: 18px;
+        border: none;
+        font-weight: bold;
+    }
+}
