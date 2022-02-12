@@ -13,12 +13,12 @@
 
 @keyframes col {
     from {
-        color: $bg-color;
+        color: #000;
     }
     50% {
-        color: $main-color;
+        color: rgb(160, 31, 31);
     }
     to {
-        color:$bg-color ;
+        color:#000 ;
     }
 }
