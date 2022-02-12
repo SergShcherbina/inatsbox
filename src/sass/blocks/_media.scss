@@ -17,7 +17,7 @@
         .menu {
             flex-direction: column;
             position: fixed;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             top: 60px;
             left: -100%;
@@ -29,11 +29,24 @@
             &_active {
                     left: 0;
             }
+            &__sale {
+                display: block;
+                color: $bg-color;
+                font-size: 22px;
+                transform: rotateX(-50%);
+                margin-top: 30%;
+                animation: sale 2s ease infinite;
+                padding-bottom: 30px;
+                span {
+                    font-size: 24px;
+                    
+                }
+            }
             &__item {
                 padding: 10px 40px;
-                &:nth-child(1) {
+               /*  &:nth-child(1) {
                     margin-top: 33%;
-                }
+                } */
             }
             &__link {
                 color: #fff;
@@ -43,6 +56,7 @@
                     color: #fff;
                 }
             }
+          
         }
         .hamburger {
             display: block;

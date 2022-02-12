@@ -45,7 +45,7 @@ header {
         display: flex;
         justify-content: end;
         align-items: center;
-        list-style-type: none;
+        list-style-type: none;        
         &__item {
             padding-left: 30px;
         }
@@ -67,6 +67,9 @@ header {
                 color: $main-color;
                 text-decoration: none;
             }
+        }
+        &__sale {
+            display: none;
         }
     }
 }
