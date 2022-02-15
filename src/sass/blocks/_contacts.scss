@@ -1,6 +1,6 @@
 .contacts {
     position: relative;
-    padding: 30px 0;
+    padding: 60px 0 ;
     background: $grey-color;
     &__inst {
         img {
@@ -15,7 +15,7 @@
         box-shadow: 0px 20px 40px 0px rgb(74 12 89 / 20%);
         border-radius: 20px;
         display: grid;
-        grid-template: auto/ 500px minmax(300px, 1fr);
+        grid-template: auto/ 490px minmax(300px, 1fr);
         column-gap: 20px;
         justify-content: space-around;
     }

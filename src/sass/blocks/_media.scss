@@ -5,6 +5,18 @@
     .container {
         max-width: 720px;
     }
+    .service {
+        &__wrapper {
+            column-gap: 40px;
+        }
+        &__title {
+            font-size: 30px;
+        }
+        &__item {
+            margin-top: 14px;
+            font-size: 16px;
+        }
+    }
     .clients {
         &__wrapper {
             grid-template: repeat(3, auto) / repeat(3, 1fr);
@@ -139,6 +151,14 @@
     .container {
         max-width: 540px;
     }
+    .service {
+        margin: 0 20px;
+        &__wrapper{
+            padding: 0;
+            grid-template: auto auto / 1fr ;
+            row-gap: 30px;
+        }
+    }
     .contacts {
         &__wrapper {
             grid-template: auto 430px / minmax(300px,1fr);
@@ -175,6 +195,11 @@
         }
         &__sale {
             font-size: 18px;
+            margin-top: 7px;
+        }
+        &__tel {
+            font-size: 24px;
+            margin: 7px 0;
         }
     }
     .clients {
