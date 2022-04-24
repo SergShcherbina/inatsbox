@@ -1,82 +1,80 @@
 .slider__instabox {
-    margin: 30px;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    min-width: 550px;
+    margin-top: 60px;
   }
-
-.slider {
-    max-width: 310px;
-    flex: 0 0 310px;
-    margin-left: unset;
-    margin-right: unset;
-    &__container{
-        position: relative;
-        margin-left: 200px;
-    }
-   
-    &__items {
-        counter-reset: slide;
-    }
-    &__item {
-        counter-increment: slide;
-        display: flex;
-        background-color: #eee;
-        &::before {
-            content: counter(slide);
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            color: #fff;
-            font-style: italic;
-            font-size: 32px;
-            font-weight: bold;
-            }
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        }
-
-    &__thumbnails {
-        position: absolute;
-        display: flex;
-        flex-flow: column wrap;
-        align-content: center;
-        width: 150px;
-        left: -175px;
-        top: 0;
-        height: 100%;
-        }
-
-    &__thumbnails-item {
-        line-height: 0;
-        max-width: 52px;
-        margin: 0 10px 10px 0;
-        opacity: .5;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: 0.15s opacity ease-in-out;
-        &.active {
-            opacity: 1;
-        }
-        &:hover {
-            opacity: 1;
-        }
-   
-
-        &>img {
-            display: inline-block;
-            width: 100%;
-            height: auto;
-        }
-    }
-    
+  /* Собственно сам слайдер */
+.slider{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 15px;
 }
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    max-height: 600px;
+    max-width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: block;
+    box-shadow: none !important;
+}
+.mini_img {
+    height: 60px;
+    margin: 2px 2px;
+    border-radius: 5px
+}
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.slider-dots {
+    text-align: center;
+}
+.active,
+.mini_img:hover {
+    opacity: 0.5;
+}
+/* Анимация слайдов */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
