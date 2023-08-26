@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InstaBox</title>
+    <meta name="title" content="Инстабудка">
+    <meta name="description"
+        content="Здесь вы можете заказать в аренду инстабудку с администратором и доставкой на мероприятие!">
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="/icons/favicon/favicon .ico" type="image/x-icon">
+    <link rel="icon" href="/icons/favicon/favicon .ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="menu__wrapper">
+                <a href="https://www.instagram.com/instabox.by/?igshid=17eky11kfcomv" class="instagram">
+                    <img src="icons/social/instagram.svg" alt="Instagram__link">
+                    <span>- наш instagram</span>
+                </a>
+                <ul class="menu ">
+                    <li class="menu__item"><a href="#first" class='menu__link'>Главная</a></li>
+                    <li class="menu__item"><a href="#slider" class='menu__link'>Фотогалерея</a></li>
+                    <li class="menu__item"><a href="#clients" class='menu__link'>Наши клиенты</a></li>
+                    <li class="menu__item"><a href="#contacts" class='menu__link'>Контакты</a></li>
+                    <!-- <li class="menu__sale">Акция от <span>50</span> уе/час!</li> -->
+                </ul>
+            </nav>
+            <div class="hamburger ">
+                <span></span>
+                <span class="long"></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <section class="promo" id="first">
+        <div class="container">
+            <div class="promo__wrapper">
+                <div class="promo__wrapper-block">
+                    <h1 class="promo__title">Фотобудка <br> InstaBox</h1>
+                    <div class="promo__subtitle">Фотографируем настроение 🥳</div>
+
+                    <div class="promotion">
+                        <div class="promotion__title">Акция! всего <span class="promotion__title-less">70</span><span class="promotion__title-more"> 50$ </span> в час!</div>
+                        <div class="promotion__timer">
+                            <div class="timer">
+                                <div class="timer__block">
+                                    <span id="days">12</span>
+                                    дня
+                                </div>
+                                <div class="timer__block">
+                                    <span id="hours">20</span>
+                                    часов
+                                </div>
+                                <div class="timer__block">
+                                    <span id="minutes">56</span>
+                                    минут
+                                </div>
+                                <div class="timer__block">
+                                    <span id="seconds">20</span>
+                                    секунд
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn">
+                        <a href="#form">Зaбронировать день</a>
+                    </div>
+                </div>
+                <div class="promo__wrapper-img"><img src="img/instabox.svg" alt="InstaBox"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider__instabox" id="slider">
+        <div class="container">
+            <div class="slider__wrapper">
+                <h2 class="slider__title">Фотогалерея</h2>
+                <div class="slider">
+                    <div class="item">
+                        <img src="img/works/photo1.jpg" alt="Первый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo2.jpg" alt="Второй слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo3.jpg" alt="Третий слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo4.jpg" alt="Четвертый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo5.jpg" alt="Пятый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo6.jpg" alt="Шестой слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo7.jpg" alt="Седьмой слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo8.jpg" alt="Восьмой слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo9.jpg" alt="Девятый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo10.jpg" alt="Десятый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="img/works/photo11.jpg" alt="Одиннадцатый слайд">
+                    </div>
+
+                    <a class="prev" onclick="minusSlide()">&#10094;</a>
+                    <a class="next" onclick="plusSlide()">&#10095;</a>
+                </div>
+
+                <div class="slider__dots">
+                    <span class="slider__dots-item" onclick="currentSlide(1)"><img class="mini-img"
+                            src="img/works/photo1.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(2)"><img class="mini-img"
+                            src="img/works/photo2.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(3)"><img class="mini-img"
+                            src="img/works/photo3.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(4)"><img class="mini-img"
+                            src="img/works/photo4.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(5)"><img class="mini-img"
+                            src="img/works/photo5.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(6)"><img class="mini-img"
+                            src="img/works/photo6.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(7)"><img class="mini-img"
+                            src="img/works/photo7.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(8)"><img class="mini-img"
+                            src="img/works/photo8.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(9)"><img class="mini-img"
+                            src="img/works/photo9.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(10)"><img class="mini-img"
+                            src="img/works/photo10.jpg" alt=""></span>
+                    <span class="slider__dots-item" onclick="currentSlide(11)"><img class="mini-img"
+                            src="img/works/photo11.jpg" alt=""></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="service">
+        <div class="container">
+            <div class="service__wrapper">
+                <div class="service__video">
+                    <video controls width="100%" height="auto" preload="metadata">
+                        <source src="video/sample-5s.vebm" type="video/webm">
+                        <source src="video/inst-video.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="service__descr">
+                    <h2 class="service__title">Мы предлагаем</h2>
+                    <ul class="service__list">
+                        <li class="service__item">&#128346 &nbsp Безлимитная печать фото</li>
+                        <li class="service__item">&#127950 &nbsp Доставка и установка по РБ</li>
+                        <li class="service__item">&#127917 &nbsp Веселый реквизит</li>
+                        <li class="service__item">&#128129 &nbsp Услуги администратора фотобудки</li>
+                        <li class="service__item">&#128640 &nbsp Брендирование фото индивидуальной рамкой, логотипом</li>
+                        <li class="service__item">&#128242 &nbsp Все фото в электронном виде на Google диск</li>
+                        <li class="service__item">&#9989 &nbsp Наличный и безналичный расчет</li>
+                        <li class="service__item">&#128293 &nbsp Эксклюзивный дизайн фотобудки в виде INSTAGRAM</li>
+                        <li class="service__item">&#128175 &nbsp Отличное количество фото за наилучшую цену</li>
+                        <li class="service__item">&#128683 &nbsp Никаких скрытых доплат</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients" id="clients">
+        <div class="container">
+            <h2 class="clients__title">Наши клиенты</h2>
+            <div class="clients__wrapper">
+                <img src="icons/brands/cola.png" alt="coca-cola" class="clients__img">
+                <img src="icons/brands/mf.png" alt="MF" class="clients__img">
+                <img src="icons/brands/galileo.png" alt="Galileo" class="clients__img">
+                <img src="icons/brands/mapid.png" alt="Mapid" class="clients__img">
+                <img src="icons/brands/belarusbank.png" alt="" class="clients__img">
+                <img src="icons/brands/onliner.png" alt="" class="clients__img">
+                <img src="icons/brands/tutby.png" alt="" class="clients__img">
+                <img src="icons/brands/rub.png" alt="" class="clients__img">
+                <img src="icons/brands/atlant.png" alt="" class="clients__img">
+                <img src="icons/brands/monolit.png" alt="" class="clients__img">
+                <img src="icons/brands/warg.png" alt="" class="clients__img">
+                <img src="icons/brands/softeq.png" alt="" class="clients__img">
+            </div>
+        </div>
+    </section>
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__wrapper">
+                <div class="contacts__inst">
+                    <img src="img/insta-form1.png" alt="">
+                </div>
+                <div class="contacts__form-wrapper" id="form">
+                    <h3 class="contacts__title"> Оставьте заявку <br>
+                        <span>и мы ответим Вам в ближайшее время
+                        </span>
+                    </h3>
+                    <form action="#" class="contacts__form">
+                        <input required name='name' type="text" placeholder="Ваше имя">
+                        <input required name='email' type="email" placeholder="Ваш E-mail">
+                        <div class="contacts__textarea">
+                            <textarea id="text" name="text" type="text" placeholder="Текст"></textarea>
+                        </div>
+                        <button class="btn contacts__form-btn" type="submit">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="basement" id="contacts">
+        <div class="container">
+            <div class="basement__wrapper">
+                <div class="basement__colums">
+                    <h4 class="basement__title"> КОНТАКТЫ:</h4>
+                    <ul class="basement__list">
+                        <li class="basement__item basement__item-phone"><a href="tel:+375444885077">+375 (44)
+                                488-50-77</a></li>
+                        <li class="basement__item basement__item-inst"><a
+                                href="https://www.instagram.com/instabox.by/?igshid=17eky11kfcomv">@instabox.by</a></li>
+                        <li class="basement__item basement__item-viber"><a href="#">+375 (44) 488-50-77</a></li>
+                        <li class="basement__item basement__item-email"><a
+                                href="mailto:instabox@rambler.ru">Instabox@rambler.ru</a></li>
+                    </ul>
+                </div>
+                <div class="basement__colums">
+                    <h4 class="basement__title"> УСЛУГИ:</h4>
+                    <ul class="basement__list">
+                        <li class="basement__item basement__item-check ">InstaBox</li>
+                        <div class="btn"><a href="tel:+375444885077">Позвонить</a></div>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

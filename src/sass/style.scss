@@ -1,15 +1,22 @@
 @import 'libs/bootstrap-reboot.min';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 @import 'base/variables';
 @import 'base/animation';
 
 
 * {
-    font-family: 'Poppins', sans-serif;
+    // font-family: 'Assistant', sans-serif;
+    font-family: 'Lobster', sans-serif;
     margin: 0;
     padding: 0;
+    color: $text-color;
 }
+
+body{
+    background-color: $bg-color;
+}
+
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -24,3 +31,4 @@
 @import 'blocks/slider'; 
 @import 'blocks/service';
 @import 'blocks/media';
+@import  'blocks/timer';

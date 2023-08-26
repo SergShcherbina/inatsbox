@@ -1,19 +1,19 @@
 //window.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu'),
+const menu = document.querySelector('.menu'),
     menuItem = document.querySelectorAll('.menu__item'),
     hamburger = document.querySelector('.hamburger');
 
-    hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('hamburger_active');
+    menu.classList.toggle('menu_active');
+});
+
+menuItem.forEach(item => {
+    item.addEventListener('click', () => {
         hamburger.classList.toggle('hamburger_active');
         menu.classList.toggle('menu_active');
     });
-
-    menuItem.forEach(item => {
-        item.addEventListener('click', () => {
-            hamburger.classList.toggle('hamburger_active');
-            menu.classList.toggle('menu_active');
-        });
-    });
+});
 
 
 //слайдер
@@ -28,7 +28,7 @@ function plusSlide() {
 
 /* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
 function minusSlide() {
-    showSlides(slideIndex -= 1);  
+    showSlides(slideIndex -= 1);
 }
 
 /* Устанавливает текущий слайд */
@@ -40,9 +40,9 @@ function currentSlide(n) {
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("item");
-    var dots = document.getElementsByClassName("slider-dots_item");
+    var dots = document.getElementsByClassName("slider__dots-item");
     if (n > slides.length) {
-      slideIndex = 1
+        slideIndex = 1
     }
     if (n < 1) {
         slideIndex = slides.length
@@ -56,4 +56,98 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
-//});
+
+
+//Timer
+function getZiro(num) {                                         //ф-я по добавлению нуля перед цифрой
+    if (num >= 0 && num < 10) {                                 //если число из аргумента > 0 и < 10 
+        return `0${num}`;                                       //возвращаем 0 + это число
+    } else {
+        return num;
+    }
+}
+
+function timer(id, deadline) {
+
+    //Timer
+    // const deadline = new Date()  /* '2022-05-30' */;                //время до которого должны дойти
+
+    // deadline.setDate(deadline.getDate() + 1);                         // остается всегда 1 день
+
+    function getTimeRemaining(endtime) {
+        let days, hours, minutes, seconds;
+
+        const t = Date.parse(endtime) - Date.parse(new Date());       //кол-во времени до которого должно дойти - настоящее время 
+
+        if (t <= 0) {                                                 //если время чтетчика <= 0, то все значения 0
+            days = 0;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+        } else {
+            days = Math.floor(t / (1000 * 60 * 60 * 24)),            //кол-во дней
+                hours = Math.floor((t / (1000 * 60 * 60)) % 24),     //кол-во часов 
+                minutes = Math.floor((t / 1000 / 60) % 60),          //кол-во минут
+                seconds = Math.floor((t / 1000) % 60);               //кол-во секунд
+        }
+
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds,
+        };
+    }
+
+    function setClock(selector, endtime) {
+        const timer = document.querySelector(selector),             //получаем все значения 
+            days = timer.querySelector('#days'),
+            hours = timer.querySelector('#hours'),
+            minutes = timer.querySelector('#minutes'),
+            seconds = timer.querySelector('#seconds'),
+            timeInterval = setInterval(updateClock, 1000);          //вызываем updateClock каждую секунду
+        updateClock();                                              //вызываем один раз без счетчикаб чтобы значения отображались сразу а не через сек
+
+        function updateClock() {
+            const t = getTimeRemaining(endtime);                    //записываем результат функции в перемкнную t
+
+            days.innerHTML = getZiro(t.days);                       //записываем в верстку значения полученные из getTimeRemaining(endtime) и записанные в переменную t
+            hours.innerHTML = getZiro(t.hours);
+            minutes.innerHTML = getZiro(t.minutes);
+            seconds.innerHTML = getZiro(t.seconds);
+
+            if (t.total <= 0) {                                       //если счетчик прошел свое время, 
+                clearInterval(timeInterval);                         //сбрасываем вызов функции updateClock
+            }
+        }
+    }
+    setClock(id, deadline);
+
+    // console.log(new Date().toLocaleDateString())
+}
+timer('.timer', '2023-08-30');
+
+
+
+//Scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        let href = this.getAttribute('href').substring(1);
+
+        const scrollTarget = document.getElementById(href);
+
+        // const topOffset = document.querySelector('.scrollto').offsetHeight;
+        const topOffset = 0; // если не нужен отступ сверху 
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
+
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});

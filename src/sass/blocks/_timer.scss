@@ -1,0 +1,39 @@
+.promotion {
+    &__title {
+        margin: 15px 0 ;
+        font-size: 22px;
+        color: rgb(255, 251, 0);
+        &-less{
+            text-decoration: line-through;
+            
+        }
+        &-more{
+            color:inherit;
+            font-size: 32px;
+        }
+    }
+
+    &__timer {
+        .timer {
+            display: flex;
+            gap: 15px;
+
+            &__block {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                // border: 2px solid rgb(246, 255, 0);
+                background-color: $light-color;
+                box-shadow: 0 0 20px $text-color;
+                span {
+                    font-size: 22px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
