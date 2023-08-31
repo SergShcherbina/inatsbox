@@ -21,6 +21,13 @@ body{
     max-width: 1140px;
     margin: 0 auto;
 }
+.title {
+    font-size: 2.5rem;
+    line-height: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
 
 @import 'blocks/menu';
 @import 'blocks/promo';
@@ -30,5 +37,6 @@ body{
 @import 'blocks/basement';
 @import 'blocks/slider'; 
 @import 'blocks/service';
+@import 'blocks/timer';
 @import 'blocks/media';
-@import  'blocks/timer';
+

@@ -1,175 +1,207 @@
-@media (max-width: 1200px){
-    
-}
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .container {
-        max-width: 95%;
+        max-width: 97%;
     }
-    .service {
-        &__wrapper {
-            column-gap: 40px;
-        }
-        &__title {
-            font-size: 30px;
-        }
-        &__item {
-            margin-top: 14px;
-            font-size: 16px;
-        }
-    }
-    .clients {
-        &__wrapper {
-            grid-template: repeat(3, auto) / repeat(3, 1fr);
-        }
-        &__title {
-            margin-top: 0;
-        }
-    }
-    header {
-        .menu {
-            flex-direction: column;
-            position: fixed;
-            justify-content: center;
-            align-items: center;
-            top: 60px;
-            left: -100%;
-            width: 80%;
-            height: 100vh;
-            background-color: rgba($color: $main-color, $alpha: .9);
-            transition: 0.6s;
-            z-index: 7;
-            &_active {
-                    left: 0;
-            }
-            &__sale {
-                display: block;
-                color: $bg-color;
-                font-size: 22px;
-                transform: rotateX(-50%);
-                margin-top: 30%;
-                animation: sale 2s ease infinite;
-                padding-bottom: 30px;
-                span {
-                    font-size: 24px;
-                    
-                }
-            }
-            &__item {
-                padding: 10px 40px;
-               /*  &:nth-child(1) {
-                    margin-top: 33%;
-                } */
-            }
-            &__link {
-                color: #fff;
-                font-size: 26px;
-                font-weight: bold;
-                &:hover {
-                    color: #fff;
-                }
-            }
-          
-        }
-        .hamburger {
-            display: block;
-            &_active {
-                span {
-                    margin-bottom: -3px;
-                    &:nth-child(1) {
-                        transform: translateY(7px) rotate(-45deg);
-                    }
-                    &:nth-child(2) {
-                        display: none;
-                    }
-                    &:nth-child(3) {
-                        transform: translateY(7px) rotate(45deg);
-                    }
-                }
-            }
-        }
-        
-    }
-    .promo {
-        min-height: 100vh;
-        &__title {
-            padding-top: 110px;
-        }
-        &__subtitle {
-            font-size: 20px;
-        }
-        &__img {
-            top: 440px;
-            left: 50%;
-            transform: translateX(-45%);
-        }
-        &__sale {
-        }
-        &__tel {
-            margin: 10px 0;
-            &:before {
-                display: none;
-            }
-        }
-        .btn {
+}
 
-        }
-    }
-    .contacts {
-        &__wrapper {
-            grid-template: auto/ minmax(300px, 500px) minmax(300px, 1fr);
-        }
-        &__form {
-            grid-template-columns:  1fr ;
-            grid-template-rows: 50px 50px 130px 50px ;
-            row-gap: 10px;
-        }
-        &__textarea {  
-            grid-column: 1 / 2;
-        }
-        &__title {
-            font-size: 32px;
-            line-height: 20px;
-            margin-top: 50px;
-        
-        span {
-            font-size: 15px; 
-        }
-        }
-    }
-    .btn {
-        &_form {
-            width: 80%;
-            margin: 10px auto 0;
+@media (max-width: 992px) {
+    .header {
+        .menu__wrapper {
+            .menu {
+                position: fixed;
+                left: -80%;
+                top: 50px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                height: 100%;
+                width: 80%;
+                background-color: $text-color;
+                transition: all 1s;
+
+                &_active {
+                    left: 0;
+                }
+
+                &__item {
+                    width: 100%;
+                    padding-right: 30px;
+                }
+
+                &__link {
+                    font-size: 1.3rem;
+                    display: flex;
+                    justify-content: center;
+                    color: $light-color;
+                    width: 100%;
+                    padding: 10px;
+                }
+            }
+
+            .burger {
+                display: block;
+
+                &_active {
+                    span {
+                        margin-bottom: -3px;
+
+                        &:nth-child(1) {
+                            transform: translateY(7px) rotate(-45deg);
+                        }
+
+                        &:nth-child(2) {
+                            display: none;
+                        }
+
+                        &:nth-child(3) {
+                            transform: translateY(7px) rotate(45deg);
+                        }
+                    }
+                }
+            }
         }
     }
 }
+
+.promo {
+    &__wrapper {
+        justify-content: center;
+
+        &-block {
+            align-items: center;
+
+            &>a {
+                width: 100%;
+            }
+        }
+
+        &-img {
+            display: none;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.promotion {
+    &__title {
+        text-align: center;
+    }
+}
+
+.service {
+    &__wrapper {
+        grid-template: auto/ minmax(250px, 400px) minmax(400px, 1fr);
+        column-gap: 30px;
+        padding: 20px;
+    }
+
+    &__item {
+        margin-top: 18px;
+    }
+}
+
+.slider {
+    &__wrapper {
+        padding: 0;
+        grid-template: auto auto / 1fr;
+        row-gap: 30px;
+    }
+
+    .next {
+        right: -15px;
+    }
+
+    .prev {
+        left: -15px;
+    }
+}
+
+.contacts {
+    &__wrapper {
+        grid-template: auto/ minmax(300px, 400px) minmax(300px, 1fr);
+    }
+
+    &__form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 50px 130px 50px;
+        row-gap: 10px;
+        padding: 0 40px 0 0;
+    }
+
+    &__textarea {
+        grid-column: 1 / 2;
+    }
+
+    &__title {
+        margin-top: 30px;
+
+        &>span {
+            font-size: 1rem;
+        }
+    }
+}
+
+.clients {
+    &__wrapper {
+        grid-template: repeat(3, auto) / repeat(3, 1fr);
+        padding: 20px;
+    }
+
+    &__title {
+        margin-top: 0;
+    }
+
+}
+
 
 @media (max-width: 768px) {
-    .container {
-        max-width: 540px;
-    }
     .service {
-        margin: 0 10px;
-        &__wrapper{
-            padding: 0;
-            grid-template: auto auto / 1fr ;
-            row-gap: 30px;
+        &__wrapper {
+            grid-template: auto / 1fr;
+            gap: 20px
+        }
+
+        &__video {
+            justify-self: center;
+            max-width: 500px;
+        }
+
+        &__descr {
+            justify-self: center;
+        }
+
+        &__title {
+            text-align: center;
         }
     }
+
     .contacts {
         &__wrapper {
-            grid-template: auto 430px / minmax(300px,1fr);
+            grid-template: 1fr 450px / minmax(300px, 500px);
             padding: 20px;
         }
+
         &__title {
             margin-top: 10px;
             text-align: center;
+
+            &>span {
+                font-size: 1.2rem;
+            }
         }
+
         &__form {
-            padding-left: 20px;
+            padding: 20px;
         }
-        
+
     }
+
     .basement {
         &__wrapper {
             justify-content: center;
@@ -182,31 +214,40 @@
         max-width: 100%;
         padding: 0 10px;
     }
-    .promo {
+
+    .contacts {
         &__title {
-            font-size: 45px;
-        }
-        &__subtitle {
-            font-size: 18px;
-        }
-        &__sale {
-            font-size: 18px;
-            margin-top: 7px;
-        }
-        &__tel {
-            font-size: 24px;
-            margin: 7px 0;
+            margin-top: 10px;
+            text-align: center;
+
+            &>span {
+                font-size: 1rem;
+            }
         }
     }
-    .clients {
-        &__title {
-            font-size: 24px;
-            
-        }
-    }
+
     .basement {
         &__wrapper {
             grid-template: auto / 200px;
         }
     }
+}
+
+
+@media (max-width: 360px) {
+    .promo {
+        &__title {
+            font-size: 3.5rem;
+        }
+
+        &__subtitle {
+            font-size: 1.3rem;
+        }
+    }
+
+    .promotion__timer .timer {
+        gap: 10px;
+    }
+
+
 }

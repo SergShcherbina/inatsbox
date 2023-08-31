@@ -6,12 +6,7 @@
 .slider {
     position: relative;
     margin: auto;
-
-    &__title {
-        font-size: 36px;
-        text-align: center;
-        padding-bottom: 10px;
-    }
+    padding-top: 20px;
 
     .item img {
         object-fit: cover;

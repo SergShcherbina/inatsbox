@@ -1,16 +1,16 @@
 //window.addEventListener('DOMContentLoaded', () => {
-const menu = document.querySelector('.menu'),
-    menuItem = document.querySelectorAll('.menu__item'),
-    hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+const menuItem = document.querySelectorAll('.menu__item');
+const burger = document.querySelector('.burger');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('hamburger_active');
+burger.addEventListener('click', () => {
+    burger.classList.toggle('burger_active');
     menu.classList.toggle('menu_active');
 });
 
 menuItem.forEach(item => {
     item.addEventListener('click', () => {
-        hamburger.classList.toggle('hamburger_active');
+        burger.classList.toggle('burger_active');
         menu.classList.toggle('menu_active');
     });
 });
@@ -141,7 +141,13 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const scrollTarget = document.getElementById(href);
 
         // const topOffset = document.querySelector('.scrollto').offsetHeight;
-        const topOffset = 0; // если не нужен отступ сверху 
+
+        let topOffset = 20; // если не нужен отступ сверху 
+
+        if (href === 'form') {
+            topOffset = 70;
+        }
+
         const elementPosition = scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 

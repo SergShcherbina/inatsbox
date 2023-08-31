@@ -1,13 +1,14 @@
 .promo {
-    min-height: 100vh;
+    min-height: 100lvh;
     margin-bottom: 40px;
     background: linear-gradient(180deg, rgba(132, 57, 236, 1) 0%, rgba(211, 0, 196, 1) 35%, rgba(248, 164, 38, 1) 100%);
 
     &__wrapper {
-        padding-top: 15%;
+        padding-top: 20vh;
         display: flex;
         position: relative;
         justify-content: space-between;
+        align-items: center;
 
         &-block {
             position: relative;
@@ -19,7 +20,7 @@
         }
 
         &-img {
-            height: 500px;
+            height: 550px;
             z-index: 1;
 
             img {
@@ -32,15 +33,20 @@
 
     &__title {
         color: $light-color;
-        font-size: 65px;
+        font-size: 4.5rem;
         line-height: 1.05;
+
+        &>span {
+            text-align: center;
+            color: inherit;
+        }
     }
-    
+
 
     &__subtitle {
         font-family: 'Lobster';
         color: $light-color;
-        font-size: 26px;
+        font-size: 1.5rem;
         line-height: 40px;
         font-weight: bold;
 

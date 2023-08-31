@@ -19,19 +19,18 @@
         justify-content: space-around;
     }
     &__title {
-        margin-top: 15%;
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 32px;
+        margin-top: 100px;
+        text-align: start;
         color: $light-color;
+        
         span {
             font-family: 'Lobster', sans-serif;
-            font-size: 18px;
+            font-size: 1.2rem;
             color: inherit
         }
     }
     &__form {
-        padding: 20px 20px 0 0 ;
+        padding: 20px 40px 0 0 ;
         display: grid;
         grid-template: 50px 150px 50px / repeat(2, 1fr) ;
         gap: 20px;
@@ -39,17 +38,11 @@
         input {
             height: 100%;
             width: 100%;
-            font-size: 14px;
+            font-size: 1rem;
             line-height: 15px;
             padding: 10px 15px;
             border-radius: 5px;
             border: solid 1px $main-color;
-        }
-        &-btn{
-            height: 50px;
-            font-size: 20px;
-            font-weight: 700;
-            color: $light-color;
         }
     }
     &__textarea {  

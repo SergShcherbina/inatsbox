@@ -1,9 +1,10 @@
 .service {
-    padding: 40px 10px ;
+    padding: 40px 0px;
     margin: 0 auto;
+
     &__wrapper {
         display: grid;
-        grid-template: auto / 335px  1fr;
+        grid-template: auto / 358px 1fr;
         gap: 80px;
 
         border-radius: 20px;
@@ -11,29 +12,47 @@
         padding: 40px;
         background-color: $light-color
     }
+
     &__video {
         video {
             border-radius: 10px;
         }
     }
+
     &__title {
-        font-size: 36px;
-        line-height: 30px;
-        margin-bottom: 25px;
+        text-align: start;
     }
+
     &__list {
         list-style-type: none;
     }
+
     &__item {
         position: relative;
-        font-size: 20px;
+        font-size: 1.2rem;
         margin-top: 24px;
-        padding-left: 10px;
+        padding-left: 35px;
+
         transition: all 0.3s;
+
         &:hover {
             transform: translateX(3px);
-            color: rgb(22, 193, 22);
+            color: #9b2ce0;
         }
+
+        &::after {
+            content: '✅';
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    }
+
+    &__price {
+        width: 100%;
+        color: $text-color;
+        box-shadow: $box-shadow;
     }
 
 }
