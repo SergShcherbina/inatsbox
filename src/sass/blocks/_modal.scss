@@ -1,0 +1,34 @@
+
+.modal {
+  position: fixed;
+  padding: 20px;
+  background-color: $light-color;
+  border: none;
+  box-shadow: $box-shadow;
+  border-radius: 10px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+
+  & > ul {
+    list-style-type: none;
+
+    & > li {
+      font-size: 1.2rem;
+    }
+  }
+
+  .modalBtn {
+    box-shadow: $box-shadow;
+    color: $text-color;
+
+    &:hover {
+      color: $light-color;
+    }
+  }
+
+}
+dialog::backdrop{
+ background-color: rgba(0, 0, 0, 0.5);
+}

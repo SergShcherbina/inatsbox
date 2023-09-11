@@ -31,7 +31,7 @@
                     <li class="menu__item"><a href="#first" class="menu__link">Главная</a></li>
                     <li class="menu__item"><a href="#slider" class="menu__link">Фотогалерея</a></li>
                     <li class="menu__item"><a href="#offers" class="menu__link">Что предлагаем</a></li>
-                    <li class="menu__item"><a href="#price" class="menu__link">Цена</a></li>
+                    <li class="menu__item" data-trigger><a href="#" class="menu__link">Цена</a></li>
                     <li class="menu__item"><a href="#clients" class="menu__link">Наши клиенты</a></li>
                     <li class="menu__item"><a href="#form" class="menu__link">Контакты</a></li>
                 </ul>
@@ -188,8 +188,8 @@
                             <li class="service__item">Эксклюзивный дизайн фотобудки в виде INSTAGRAM</li>
                             <li class="service__item">Отличное качество фото за наилучшую цену</li>
                             <li class="service__item">Никаких скрытых доплат</li>
-                            <button class="btn service__price">Стоимость аренды </button>
                         </ul>
+                        <button  class="btn service__price" data-trigger >Стоимость аренды </button>
                     </div>
                 </div>
             </div>
@@ -237,6 +237,17 @@
                 </div>
             </div>
         </section>
+
+        <dialog class="modal" >
+            <ul class="">
+                <li> 1 час - 100 у.е.</li>
+                <li>2 час - 120 у.е.</li>
+                <li>1 час - 150 у.е.</li>
+                <li>Каждый дополsнительный час + 40 уе</li>
+            </ul>
+            <a class="btn modalBtn"  href="#contacts"> Оставить заявку </a>
+        </dialog>
+
     </main>
 
     <footer class="basement" id="contacts">
