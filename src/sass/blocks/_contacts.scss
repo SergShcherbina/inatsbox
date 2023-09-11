@@ -30,9 +30,9 @@
         }
     }
     &__form {
-        padding: 20px 40px 0 0 ;
+        padding: 20px 40px 20px 0 ;
         display: grid;
-        grid-template: 50px 150px 50px / repeat(2, 1fr) ;
+        grid-template: 50px 150px 50px auto/ repeat(2, 1fr) ;
         gap: 20px;
         justify-content: center;
         input {

@@ -129,7 +129,7 @@
 
         &__form {
             grid-template-columns: 1fr;
-            grid-template-rows: 50px 50px 130px 50px;
+            grid-template-rows: 50px 50px 130px 70px;
             row-gap: 10px;
             padding: 0 40px 0 0;
         }
@@ -184,7 +184,7 @@
 
     .contacts {
         &__wrapper {
-            grid-template: 1fr 450px / minmax(300px, 500px);
+            grid-template: auto 1fr / minmax(300px, 500px);
             padding: 20px;
         }
 
@@ -211,10 +211,6 @@
 }
 
 @media (max-width: 576px) {
-    .container {
-        max-width: 100%;
-        padding: 0 10px;
-    }
 
     .contacts {
         &__title {
@@ -249,6 +245,4 @@
     .promotion__timer .timer {
         gap: 10px;
     }
-
-
 }
