@@ -81,7 +81,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
             topOffset = 70;
         }
 
-        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const elementPosition = scrollTarget && scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 
         window.scrollBy({
@@ -176,4 +176,17 @@ deadline.setDate(deadline.getDate() + 3);
 timer('.timer', deadline);
 
 
-//
+//modal
+const modal = document.querySelector('.modal')
+const trigger = document.querySelectorAll('[data-trigger]')
+console.log(trigger)
+trigger.forEach(btn => {
+    btn.addEventListener('click', ()=> {
+        modal.showModal()
+    })
+})
+
+
+modal.addEventListener('click', ()=> {
+    modal.close()
+})
