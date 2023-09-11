@@ -1,20 +1,24 @@
 // window.addEventListener('DOMContentLoaded', () => {
 
 const menu = document.querySelector('.menu');
-const menuItem = document.querySelectorAll('.menu__item');
 const burger = document.querySelector('.burger');
 
-burger.addEventListener('click', () => {
-    burger.classList.toggle('burger_active');
-    menu.classList.toggle('menu_active');
-});
+function toggleMenu(e) {
+    if (burger.contains(e.target) && !menu.classList.contains('menu_active')) {
+        burger.classList.add('burger_active');
+        menu.classList.add('menu_active');
+        document.body.style.overflow = 'hidden'
+        return
+    }
+    if (e.target !== menu && menu.classList.contains('menu_active')) {
+        burger.classList.remove('burger_active');
+        menu.classList.remove('menu_active');
+        document.body.style.overflow = 'visible'
+    }
+}
 
-menuItem.forEach(item => {
-    item.addEventListener('click', () => {
-        burger.classList.toggle('burger_active');
-        menu.classList.toggle('menu_active');
-    });
-});
+document.addEventListener('click', (e) => toggleMenu(e))
+document.removeEventListener('click', toggleMenu)
 
 
 //слайдер
@@ -81,8 +85,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const offsetPosition = elementPosition - topOffset;
 
         window.scrollBy({
-            top: offsetPosition,
-            behavior: 'smooth'
+            top: offsetPosition, behavior: 'smooth'
         });
     });
 });
@@ -99,7 +102,6 @@ const containHide = () => header.classList.contains('hide')
 window.addEventListener('scroll', () => {
     if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
         header.classList.add('hide');
-        console.log('down')
     } else if (scrollPosition() < lastScroll && containHide()) {
         header.classList.remove('hide')
     }
@@ -142,20 +144,14 @@ function timer(id, deadline) {
         }
 
         return {
-            'total': t,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds,
+            'total': t, 'days': days, 'hours': hours, 'minutes': minutes, 'seconds': seconds,
         };
     }
 
     function setClock(selector, endtime) {
         const timer = document.querySelector(selector),                       //получаем все значения
-            days = timer.querySelector('#days'),
-            hours = timer.querySelector('#hours'),
-            minutes = timer.querySelector('#minutes'),
-            seconds = timer.querySelector('#seconds'),
+            days = timer.querySelector('#days'), hours = timer.querySelector('#hours'),
+            minutes = timer.querySelector('#minutes'), seconds = timer.querySelector('#seconds'),
             timeInterval = setInterval(updateClock, 1000);   //вызываем updateClock каждую секунду
         updateClock();                  //вызываем один раз без счетчикаб чтобы значения отображались сразу а не через сек
 
@@ -179,3 +175,5 @@ const deadline = new Date();
 deadline.setDate(deadline.getDate() + 3);
 timer('.timer', deadline);
 
+
+//
