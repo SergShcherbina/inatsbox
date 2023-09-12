@@ -70,17 +70,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         e.preventDefault();
 
         let href = this.getAttribute('href').substring(1);
-
         const scrollTarget = document.getElementById(href);
-
         // const topOffset = document.querySelector('.scrollto').offsetHeight;
-
-        let topOffset = 20; // если не нужен отступ сверху
-
-        if (href === 'form') {
-            topOffset = 70;
-        }
-
+        let topOffset = 0; // если не нужен отступ сверху
         const elementPosition = scrollTarget && scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 
@@ -119,12 +111,9 @@ function getZiro(num) {                                             //ф-я по
     }
 }
 
+
+//Timer
 function timer(id, deadline) {
-
-    //Timer
-    // const deadline = new Date()  /* '2022-05-30' */;                        //время до которого должны дойти
-
-    // deadline.setDate(deadline.getDate() + 1);                               // остается всегда 1 день
 
     function getTimeRemaining(endtime) {
         let days, hours, minutes, seconds;
