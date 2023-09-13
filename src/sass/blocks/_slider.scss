@@ -89,7 +89,7 @@
 
 
 .slider__instabox {
-  padding: 5px 0 0 ;
+  padding: 10px 0 0;
   height: 90vh;
   display: flex;
   align-items: center;
@@ -160,15 +160,5 @@
     opacity: .25;
     pointer-events: none;
   }
-
-  @media (width <= 992px) {
-    .prev,
-    .next {
-      top: 40%;
-      font-size: 2.5rem;
-      color: $light-color;
-    }
-  }
-
 }
 

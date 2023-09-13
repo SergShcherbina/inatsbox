@@ -1,248 +1,245 @@
 @media (max-width: 1200px) {
-    .container {
-        max-width: 97%;
-    }
+  .container {
+    max-width: 97%;
+  }
 }
 
 @media (max-width: 992px) {
-    .header {
-        .menu__wrapper {
-            .menu {
-                position: fixed;
-                left: -80%;
-                top: 50px;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                height: 100%;
-                width: 80%;
-                background-color: $text-color;
-                transition: all 0.5s;
+  .header {
+    .menu__wrapper {
+      .menu {
+        position: fixed;
+        left: -80%;
+        top: 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+        width: 80%;
+        background-color: $text-color;
+        transition: all 0.5s;
 
-                &_active {
-                    left: 0;
-                }
-
-                &__item {
-                    width: 100%;
-                    padding-right: 30px;
-                }
-
-                &__link {
-                    font-size: 1.3rem;
-                    display: flex;
-                    justify-content: center;
-                    color: $light-color;
-                    width: 100%;
-                    padding: 10px;
-                }
-            }
-
-            .burger {
-                display: block;
-
-                &_active {
-                    span {
-                        margin-bottom: -3px;
-
-                        &:nth-child(1) {
-                            transform: translateY(7px) rotate(-45deg);
-                        }
-
-                        &:nth-child(2) {
-                            display: none;
-                        }
-
-                        &:nth-child(3) {
-                            transform: translateY(7px) rotate(45deg);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-
-    .promo {
-        &__wrapper {
-            justify-content: center;
-
-            &-block {
-                align-items: center;
-
-                &>a {
-                    width: 100%;
-                }
-            }
-
-            &-img {
-                display: none;
-            }
-        }
-
-        &__title {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    }
-
-    .promotion {
-        &__title {
-            text-align: center;
-        }
-    }
-
-    .service {
-        &__wrapper {
-            grid-template: auto/ minmax(250px, 373px) minmax(400px, 1fr);
-            column-gap: 30px;
-            padding: 20px;
+        &_active {
+          left: 0;
         }
 
         &__item {
-            margin-top: 18px;
-        }
-    }
-
-    .slider {
-        &__wrapper {
-            padding: 0;
-            grid-template: auto auto / 1fr;
-            row-gap: 30px;
+          width: 100%;
+          padding-right: 30px;
         }
 
-        .next {
-            right: -15px;
+        &__link {
+          font-size: 1.3rem;
+          display: flex;
+          justify-content: center;
+          color: $light-color;
+          width: 100%;
+          padding: 10px;
         }
+      }
 
-        .prev {
-            left: -15px;
-        }
-    }
+      .burger {
+        display: block;
 
-    .contacts {
-        &__wrapper {
-            grid-template: auto/ minmax(300px, 400px) minmax(300px, 1fr);
-        }
+        &_active {
+          span {
+            margin-bottom: -3px;
 
-        &__form {
-            grid-template-columns: 1fr;
-            grid-template-rows: 50px 50px 130px 70px;
-            row-gap: 10px;
-            padding: 0 40px 0 0;
-        }
-
-        &__textarea {
-            grid-column: 1 / 2;
-        }
-
-        &__title {
-            margin-top: 30px;
-
-            &>span {
-                font-size: 1rem;
+            &:nth-child(1) {
+              transform: translateY(7px) rotate(-45deg);
             }
+
+            &:nth-child(2) {
+              display: none;
+            }
+
+            &:nth-child(3) {
+              transform: translateY(7px) rotate(45deg);
+            }
+          }
         }
+      }
+    }
+  }
+
+
+  .promo {
+    &__wrapper {
+      justify-content: center;
+
+      &-block {
+        align-items: center;
+
+        & > a {
+          width: 100%;
+        }
+      }
+
+      &-img {
+        display: none;
+      }
     }
 
-    .clients {
-        &__wrapper {
-            grid-template: repeat(3, auto) / repeat(3, 1fr);
-            padding: 20px;
-        }
-
-        &__title {
-            margin-top: 0;
-        }
-
+    &__title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
+  }
+
+  .promotion {
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .service {
+    &__wrapper {
+      grid-template: auto/ minmax(250px, 373px) minmax(400px, 1fr);
+      column-gap: 30px;
+      padding: 20px;
+    }
+
+    &__item {
+      margin-top: 18px;
+    }
+  }
+
+  .slider {
+    right: -15px;
+
+
+    .prev {
+      left: -15px;
+    }
+
+    .next, .prev {
+      top: 40%;
+      font-size: 2.5rem;
+      color: $light-color;
+    }
+  }
 }
 
+.contacts {
+  &__wrapper {
+    grid-template: auto/ minmax(300px, 400px) minmax(300px, 1fr);
+  }
+
+  &__form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 130px 70px;
+    row-gap: 10px;
+    padding: 0 40px 0 0;
+  }
+
+  &__textarea {
+    grid-column: 1 / 2;
+  }
+
+  &__title {
+    margin-top: 30px;
+
+    & > span {
+      font-size: 1rem;
+    }
+  }
+}
+
+.clients {
+  &__wrapper {
+    grid-template: repeat(3, auto) / repeat(3, 1fr);
+    padding: 20px;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+}
 
 @media (max-width: 768px) {
-    .service {
-        &__wrapper {
-            grid-template: auto / 1fr;
-            gap: 20px
-        }
-
-        &__video {
-            justify-self: center;
-            max-width: 500px;
-        }
-
-        &__descr {
-            justify-self: center;
-        }
-
-        &__title {
-            text-align: center;
-        }
+  .service {
+    &__wrapper {
+      grid-template: auto / 1fr;
+      gap: 20px
     }
 
-    .contacts {
-        &__wrapper {
-            grid-template: auto 1fr / minmax(300px, 500px);
-            padding: 20px;
-        }
-
-        &__title {
-            margin-top: 10px;
-            text-align: center;
-
-            &>span {
-                font-size: 1.2rem;
-            }
-        }
-
-        &__form {
-            padding: 20px;
-        }
-
+    &__video {
+      justify-self: center;
+      max-width: 500px;
     }
 
-    .basement {
-        &__wrapper {
-            justify-content: center;
-        }
+    &__descr {
+      justify-self: center;
     }
+
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .contacts {
+    &__wrapper {
+      grid-template: auto 1fr / minmax(300px, 500px);
+      padding: 20px;
+    }
+
+    &__title {
+      margin-top: 10px;
+      text-align: center;
+
+      & > span {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__form {
+      padding: 20px;
+    }
+
+  }
+
+  .basement {
+    &__wrapper {
+      justify-content: center;
+    }
+  }
 }
 
 @media (max-width: 576px) {
 
-    .contacts {
-        &__title {
-            margin-top: 10px;
-            text-align: center;
+  .contacts {
+    &__title {
+      margin-top: 10px;
+      text-align: center;
 
-            &>span {
-                font-size: 1rem;
-            }
-        }
+      & > span {
+        font-size: 1rem;
+      }
     }
+  }
 
-    .basement {
-        &__wrapper {
-            grid-template: auto / 200px;
-        }
+  .basement {
+    &__wrapper {
+      grid-template: auto / 200px;
     }
+  }
 }
 
 
 @media (max-width: 360px) {
-    .promo {
-        &__title {
-            font-size: 3.5rem;
-        }
-
-        &__subtitle {
-            font-size: 1.3rem;
-        }
+  .promo {
+    &__title {
+      font-size: 3.5rem;
     }
 
-    .promotion__timer .timer {
-        gap: 10px;
+    &__subtitle {
+      font-size: 1.3rem;
     }
+  }
+
+  .promotion__timer .timer {
+    gap: 10px;
+  }
 }
