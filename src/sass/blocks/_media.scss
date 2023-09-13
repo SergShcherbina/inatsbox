@@ -107,8 +107,9 @@
   }
 
   .slider {
-    right: -15px;
-
+    .next {
+      right: -15px;
+    }
 
     .prev {
       left: -15px;
