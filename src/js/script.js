@@ -147,17 +147,16 @@ timer('.timer', deadline);
 //modal
 const modal = document.querySelector('.modal')
 const trigger = document.querySelectorAll('[data-trigger]')
-console.log(trigger)
 trigger.forEach(btn => {
-    btn.addEventListener('click', ()=> {
+    btn.addEventListener('click', () => {
         modal.showModal()
     })
 })
 
-
-modal.addEventListener('click', ()=> {
+modal.addEventListener('click', () => {
     modal.close()
 })
+
 
 // slider
 let slider = document.querySelector('.slider'),
@@ -167,9 +166,8 @@ let slider = document.querySelector('.slider'),
     arrows = slider.querySelector('.slider-arrows'),
     prev = arrows.children[0],
     next = arrows.children[1],
-    slideWidth = slides[0].offsetWidth
-console.log(slideWidth)
-let  slideIndex = 0,
+    slideWidth = slides[0].offsetWidth,
+    slideIndex = 0,
     posInit = 0,
     posX1 = 0,
     posX2 = 0,
@@ -185,10 +183,10 @@ let  slideIndex = 0,
     lastTrf = --slides.length * slideWidth,
     posThreshold = slides[0].offsetWidth * 0.35,
     trfRegExp = /([-0-9.]+(?=px))/,
-    getEvent = function() {
+    getEvent = () => {
         return (event.type.search('touch') !== -1) ? event.touches[0] : event;
     },
-    slide = function() {
+    slide = function () {
         if (transition) {
             sliderTrack.style.transition = 'transform .5s';
         }
@@ -197,7 +195,30 @@ let  slideIndex = 0,
         prev.classList.toggle('disabled', slideIndex === 0);
         next.classList.toggle('disabled', slideIndex === --slides.length);
     },
-    swipeStart = function() {
+
+    activeDots = (count = 0) => {
+    const dots = slider.querySelectorAll('.dot')
+        dots.forEach((el)=> {
+            el.classList.remove('active');
+        });
+
+        if (dots) {
+            dots[count].classList.add('active')
+        }
+
+    },
+
+    addDots = () => {
+        slides.forEach((el, i) => {
+            const dot = document.createElement('span')
+            dot.setAttribute('id', i)
+            dot.classList.add('dot')
+            arrows.append(dot)
+        })
+        activeDots()
+    },
+
+    swipeStart = () => {
         let evt = getEvent();
 
         if (allowSwipe) {
@@ -221,8 +242,7 @@ let  slideIndex = 0,
             // sliderList.classList.add('grabbing');
         }
     },
-    swipeAction = function() {
-
+    swipeAction = () => {
         let evt = getEvent(),
             style = sliderTrack.style.transform,
             transform = +style.match(trfRegExp)[0];
@@ -276,7 +296,7 @@ let  slideIndex = 0,
         }
 
     },
-    swipeEnd = function() {
+    swipeEnd = function () {
         posFinal = posInit - posX1;
 
         isScroll = false;
@@ -311,7 +331,7 @@ let  slideIndex = 0,
         }
 
     },
-    setTransform = function(transform, comapreTransform) {
+    setTransform = function (transform, comapreTransform) {
         if (transform >= comapreTransform) {
             if (transform > comapreTransform) {
                 sliderTrack.style.transform = `translate3d(${comapreTransform}px, 0px, 0px)`;
@@ -319,7 +339,7 @@ let  slideIndex = 0,
         }
         allowSwipe = false;
     },
-    reachEdge = function() {
+    reachEdge = function () {
         transition = false;
         swipeEnd();
         allowSwipe = true;
@@ -332,16 +352,33 @@ sliderTrack.addEventListener('transitionend', () => allowSwipe = true);
 slider.addEventListener('touchstart', swipeStart);
 slider.addEventListener('mousedown', swipeStart);
 
-arrows.addEventListener('click', function() {
+arrows.addEventListener('click', function () {
     let target = event.target;
 
     if (target.classList.contains('next')) {
         slideIndex++;
+        activeDots(slideIndex)
     } else if (target.classList.contains('prev')) {
         slideIndex--;
+        activeDots(slideIndex)
+    } else if (target.classList.contains('dot')) {
+        slideIndex = +target.id
+        activeDots(slideIndex)
     } else {
+        debugger
         return;
     }
 
+
     slide();
 });
+addDots()
+// swipeStart()
+
+
+// const title = document.querySelectorAll('.title')
+// console.log(title)
+//
+// const anomationTitle = (t) => {
+//
+// }

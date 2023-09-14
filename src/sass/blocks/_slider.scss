@@ -89,8 +89,7 @@
 
 
 .slider__instabox {
-  padding: 10px 0 0;
-  height: 90vh;
+  height: 93vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,6 +109,7 @@
     object-fit: cover;
     border-radius: 20px;
     pointer-events: none; //чтобы изо не перетаскивались мышью
+    touch-action: pan-y;
   }
 
   .slider-list {
@@ -132,6 +132,20 @@
   .slider-arrows {
     margin-top: 15px;
     text-align: center;
+
+    .dot{
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      margin: 5px;
+      border: 1px solid $text-color;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+
+    .active {
+      background: $text-color;
+    }
   }
 
   .next,
@@ -145,6 +159,18 @@
     font-size: 30px;
     cursor: pointer;
     outline: none;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      width: 65px;
+      height: 40px;
+      box-shadow: 0 0 7px $light-color;
+      border-radius: 15px;
+    }
+
   }
 
   .next {
