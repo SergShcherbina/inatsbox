@@ -391,7 +391,6 @@ const callback =  (entries, observer) => {
         }
     })
 };
-
 const observer = new IntersectionObserver(callback, options);
 const items = document.querySelectorAll(".element-animation")
 

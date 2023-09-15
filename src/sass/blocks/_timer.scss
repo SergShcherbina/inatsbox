@@ -1,53 +1,63 @@
 .promotion {
-    &__title {
-        margin: 40px 0 15px;
-        font-size: 1.3rem;
-        color: rgb(255, 251, 0);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-in;
+  transition-delay: 1s;
 
-        &-less {
-            text-decoration: line-through;
-        }
+  &__title {
+    margin: 40px 0 15px;
+    font-size: 1.3rem;
+    color: rgb(255, 251, 0);
 
-        &-more {
-            color: inherit;
-            font-size: 2rem;
-        }
+    &-less {
+      text-decoration: line-through;
     }
 
-    &__timer {
-        .timer {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-
-            &__block {
-                display: flex;
-                position: relative;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                background-color: $light-color;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: -4px;
-                    left: -4px;
-                    width: 78px;
-                    height: 78px;
-                    border-radius: 50%;
-                    border: 2px solid $light-color;
-                }
-
-                span {
-                    font-size: 1.3rem;
-                    line-height: 20px;
-                }
-            }
-        }
+    &-more {
+      color: inherit;
+      font-size: 2rem;
     }
+  }
+
+  &__timer {
+    .timer {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+
+      &__block {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: $light-color;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          width: 78px;
+          height: 78px;
+          border-radius: 50%;
+          border: 2px solid $light-color;
+        }
+
+        span {
+          font-size: 1.3rem;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+.element-show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
