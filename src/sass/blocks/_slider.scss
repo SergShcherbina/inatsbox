@@ -101,6 +101,10 @@
     max-width: 600px;
     user-select: none;
     touch-action: pan-y; //Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X
+
+    transform: translateX(50%);
+    opacity: 0;
+    transition: all 0.5s
   }
 
   .slider img {
@@ -185,6 +189,11 @@
   .prev.disabled {
     opacity: .25;
     pointer-events: none;
+  }
+
+  .element-show {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
