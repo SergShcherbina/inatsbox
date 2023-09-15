@@ -1,19 +1,57 @@
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    height: 50px;
-    font-weight: bold; 
-    font-size: 1.2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: $light-color;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 2px solid $light-color;
+  transition: .3s all;
+  overflow: hidden;
+
+  &:hover {
+    text-decoration: none;
+    background: #6716bf;
     color: $light-color;
-    background-color: transparent;
-    border-radius: 6px;
-    border: 2px solid $light-color;
-    transition: .3s all;
-    &:hover {
-        text-decoration: none;
-        background: #6716bf; 
-        color:  $light-color;
+
+    &:before {
+      animation: none;
     }
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: $light-color;
+    animation: shiny-btn1 7s ease-in-out infinite;
+  }
+}
+
+@keyframes shiny-btn1 {
+  0% {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
 }

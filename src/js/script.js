@@ -376,9 +376,25 @@ addDots()
 // swipeStart()
 
 
-// const title = document.querySelectorAll('.title')
-// console.log(title)
-//
-// const anomationTitle = (t) => {
-//
-// }
+//scroll animation
+const options = {
+    threshold: [.4],
+};
+
+const callback =  (entries, observer) => {
+    entries.forEach((change) => {
+        console.log(change)
+        if(change.isIntersecting === true){
+            change.target.classList.add('element-show')
+        } else if (change.isIntersecting === false) {
+            change.target.classList.remove('element-show')
+        }
+    })
+};
+
+const observer = new IntersectionObserver(callback, options);
+const items = document.querySelectorAll(".element-animation")
+
+for (let i of items) {
+    observer.observe(i)
+}

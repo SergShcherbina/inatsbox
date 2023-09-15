@@ -1,58 +1,90 @@
 .service {
-    padding: 40px 0px;
-    margin: 0 auto;
+  padding: 40px 0px;
+  margin: 0 auto;
 
-    &__wrapper {
-        display: grid;
-        grid-template: auto / 358px 1fr;
-        gap: 80px;
+  &__wrapper {
+    display: grid;
+    grid-template: auto / 358px 1fr;
+    gap: 80px;
 
-        border-radius: 20px;
-        box-shadow: $box-shadow;
-        padding: 40px;
-        background-color: $light-color
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+    padding: 40px;
+    background-color: $light-color
+  }
+
+  &__video {
+    video {
+      border-radius: 10px;
+
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
+    }
+  }
+
+  &__title {
+    text-align: start;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 1.2rem;
+    margin-top: 24px;
+    padding-left: 35px;
+
+    opacity: 0;
+    transform: translateY(120%);
+    transition: opacity 0.3s, transform 0.3s;
+
+    &::after {
+      content: '✅';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.2s;
     }
 
-    &__video {
-        video {
-            border-radius: 10px;
+    &:hover:after {
+      text-shadow: 0 0 5px $text-color;
+    }
+  }
+
+  &__price {
+    width: 100%;
+    color: $text-color;
+    box-shadow: $box-shadow;
+  }
+
+  .element-show {
+
+    .service__item {
+      @for $i from 1 through 10 {
+        $delay: $i * 0.2;
+        &:nth-child(#{$i}) {
+          @if $i == 1 {
+            transition-delay: 0s;
+            opacity: 1;
+            transform: translateY(0);
+          } @else {
+            transition-delay: #{$delay}s;
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
+      }
     }
 
-    &__title {
-        text-align: start;
+    & > video {
+      opacity: 1;
     }
-
-    &__list {
-        list-style-type: none;
-    }
-
-    &__item {
-        position: relative;
-        font-size: 1.2rem;
-        margin-top: 24px;
-        padding-left: 35px;
-
-        transition: all 0.3s;
-
-        &:hover {
-            transform: translateX(3px);
-            color: #9b2ce0;
-        }
-z
-        &::after {
-            content: '✅';
-            position: absolute;
-            top: 0;
-            left: 0;
-
-        }
-    }
-
-    &__price {
-        width: 100%;
-        color: $text-color;
-        box-shadow: $box-shadow;
-    }
-
+  }
 }
+
+
+
+
+

@@ -376,32 +376,25 @@ addDots()
 // swipeStart()
 
 
-// const title = document.querySelectorAll('.title')
-// console.log(title)
-//
-// const anomationTitle = (t) => {
-//
-// }
-
-var options = {
-    // root: document.querySelector("form"),
-    rootMargin: "0px",
-    threshold: 0.5,
+//scroll animation
+const options = {
+    threshold: [.4],
 };
 
-var callback = function (entries, observer) {
-    entries.forEach((ent) => {
-        console.log(ent)
-        if(ent.isIntersecting === true){
-            ent.target.classList.add('activeItem')
-        } else if (ent.isIntersecting === false) {
-            ent.target.classList.remove('activeItem')
+const callback =  (entries, observer) => {
+    entries.forEach((change) => {
+        console.log(change)
+        if(change.isIntersecting === true){
+            change.target.classList.add('element-show')
+        } else if (change.isIntersecting === false) {
+            change.target.classList.remove('element-show')
         }
     })
 };
-var observer = new IntersectionObserver(callback, options);
-const items = document.querySelectorAll(".service__item")
 
-for(let i of items){
+const observer = new IntersectionObserver(callback, options);
+const items = document.querySelectorAll(".element-animation")
+
+for (let i of items) {
     observer.observe(i)
 }
