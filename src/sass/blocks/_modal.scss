@@ -1,6 +1,7 @@
 
 .modal {
   position: fixed;
+  display: block;
   padding: 20px;
   background-color: $light-color;
   border: none;
@@ -10,6 +11,10 @@
   transform: translateY(-50%);
   margin: 0 auto;
   max-width: 355px;
+
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 0.3s;
 
   & > ul {
     list-style-type: none;
@@ -37,3 +42,20 @@
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.showModal {
+  opacity: 1;
+  visibility: visible;
+}
+
+//@keyframes showModal {
+//  0% {
+//    transform: translateY(-50%) scale(0);
+//  }
+//  80% {
+//    transform: translateY(-50%) scale(1.2);
+//  }
+//  100% {
+//    transform: translateY(-50%) scale(1);
+//  }
+//}

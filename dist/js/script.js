@@ -150,11 +150,13 @@ const trigger = document.querySelectorAll('[data-trigger]')
 trigger.forEach(btn => {
     btn.addEventListener('click', () => {
         modal.showModal()
+        modal.classList.add('showModal')
     })
 })
 
 modal.addEventListener('click', () => {
     modal.close()
+    modal.classList.remove('showModal')
 })
 
 
