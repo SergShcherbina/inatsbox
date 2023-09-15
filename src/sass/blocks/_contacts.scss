@@ -25,6 +25,9 @@
     text-align: start;
     color: $light-color;
 
+    transition: all 0.5s;
+    transition-delay: 0.8s;
+
     span {
       font-family: 'Lobster', sans-serif;
       font-size: 1.2rem;
@@ -66,5 +69,8 @@
     }
   }
 
+  .element-show {
+    text-shadow: 0 0 10px #FFE7708E;
+  }
 
 }
