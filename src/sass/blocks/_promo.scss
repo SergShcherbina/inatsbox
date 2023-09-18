@@ -6,26 +6,23 @@
   &__wrapper {
     padding-top: 20vh;
     display: flex;
-    position: relative;
     justify-content: space-between;
     align-items: center;
 
     &-block {
-      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      z-index: 5;
       width: fit-content;
     }
 
     &-img {
       height: 550px;
-      z-index: 1;
 
       img {
         height: 100%;
         width: 100%;
+        margin-top: 10px;
         object-fit: cover;
       }
     }
@@ -39,7 +36,7 @@
 
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.8s ease-in;
+    transition: all 0.5s ease-in;
 
     & > span {
       text-align: center;
@@ -55,19 +52,20 @@
 
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.8s ease-in;
+    transition: all 0.5s ease-in;
     transition-delay: 0.5s;
   }
 
   .smile {
     display: inline-block;
   }
-  .btn {
+
+  .wrapperPromoButton {
+    width: 100%;
     opacity: 0;
-    transition: all 0.8s ease-in;
+    transition: all 0.5s ease-in;
     transition-delay: 1.5s;
   }
-
 
   .element-show {
     opacity: 1;
@@ -76,7 +74,6 @@
     .smile {
       animation: showSmile 0.5s ease-in-out 3s;
     }
-
   }
 }
 

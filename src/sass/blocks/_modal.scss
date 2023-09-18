@@ -1,3 +1,8 @@
+body {
+  &.modal-active {
+    overflow: hidden;
+  }
+}
 
 .modal {
   position: fixed;
@@ -7,14 +12,11 @@
   border: none;
   box-shadow: $box-shadow;
   border-radius: 10px;
-  top: 40%;
-  transform: translateY(-50%);
+  top: 20%;
   margin: 0 auto;
   max-width: 355px;
 
-  visibility: hidden;
-  opacity: 0;
-  transition-duration: 0.3s;
+  animation: roadRunnerOut .5s 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 
   & > ul {
     list-style-type: none;
@@ -33,29 +35,66 @@
     }
   }
 
+
   @media(max-width: 360px) {
     max-width: 310px;
   }
-
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  visibility: visible;
+  background-color: $main-color;
+  overflow: hidden;
+  transform: scaleY(.01) scaleX(0);
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
 .showModal {
-  opacity: 1;
-  visibility: visible;
+  transform: scale(0);
+  animation: zoomIn 0.5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-//@keyframes showModal {
-//  0% {
-//    transform: translateY(-50%) scale(0);
-//  }
-//  80% {
-//    transform: translateY(-50%) scale(1.2);
-//  }
-//  100% {
-//    transform: translateY(-50%) scale(1);
-//  }
-//}
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes roadRunnerOut {
+  0% {
+    transform: translateX(0px) skewX(0deg) scaleX(1);
+  }
+  30% {
+    transform: translateX(-30px) skewX(-5deg) scaleX(.9);
+  }
+  100% {
+    transform: translateX(1500px) skewX(30deg) scaleX(1.3);
+  }
+}

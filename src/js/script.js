@@ -151,13 +151,31 @@ trigger.forEach(btn => {
     btn.addEventListener('click', () => {
         modal.showModal()
         modal.classList.add('showModal')
+        document.body.classList.add('modal-active')
     })
 })
 
 modal.addEventListener('click', () => {
     modal.close()
     modal.classList.remove('showModal')
+    document.body.classList.remove('modal-active')
 })
+
+//modal 2
+// const buttonModal = document.querySelector('.buttonModal')
+// const modalContainer = document.getElementById('modal-container')
+//
+// buttonModal.addEventListener('click', ()=> {
+//     modalContainer.classList.remove('out')
+//     modalContainer.classList.add('one')
+//     document.body.classList.add('modal-active')
+// });
+//
+// modalContainer.addEventListener('click', () => {
+//     // modalContainer.classList.remove('one')
+//     modalContainer.classList.add('out');
+//     document.body.classList.remove('modal-active')
+// })
 
 
 // slider
@@ -367,11 +385,8 @@ arrows.addEventListener('click', function () {
         slideIndex = +target.id
         activeDots(slideIndex)
     } else {
-        debugger
-        return;
+        return
     }
-
-
     slide();
 });
 addDots()
@@ -382,14 +397,12 @@ addDots()
 const options = {
     threshold: [.4],
 };
-
 const callback =  (entries, observer) => {
     entries.forEach((change) => {
-        console.log(change)
         if(change.isIntersecting === true){
             change.target.classList.add('element-show')
-        } else if (change.isIntersecting === false) {
-            change.target.classList.remove('element-show')
+        // } else if (change.isIntersecting === false) {
+            // change.target.classList.remove('element-show')
         }
     })
 };
