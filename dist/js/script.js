@@ -7,13 +7,11 @@ function toggleMenu(e) {
     if (burger.contains(e.target) && !menu.classList.contains('menu_active')) {
         burger.classList.add('burger_active');
         menu.classList.add('menu_active');
-        document.body.style.overflow = 'hidden'
         return
     }
     if (e.target !== menu && menu.classList.contains('menu_active')) {
         burger.classList.remove('burger_active');
         menu.classList.remove('menu_active');
-        document.body.style.overflow = 'visible'
     }
 }
 
@@ -145,37 +143,22 @@ timer('.timer', deadline);
 
 
 //modal
-const modal = document.querySelector('.modal')
-const trigger = document.querySelectorAll('[data-trigger]')
-trigger.forEach(btn => {
+const overlay = document.querySelector('.overlay'),
+      triggerModal = document.querySelectorAll('[data-trigger]');
+
+triggerModal.forEach(btn => {
     btn.addEventListener('click', () => {
-        modal.showModal()
-        modal.classList.add('showModal')
+        overlay.classList.remove('hideOverlay')
+        overlay.classList.add('showOverlay')
         document.body.classList.add('modal-active')
     })
-})
+});
 
-modal.addEventListener('click', () => {
-    modal.close()
-    modal.classList.remove('showModal')
+overlay.addEventListener('click', () => {
+    overlay.classList.remove('showOverlay')
+    overlay.classList.add('hideOverlay')
     document.body.classList.remove('modal-active')
-})
-
-//modal 2
-// const buttonModal = document.querySelector('.buttonModal')
-// const modalContainer = document.getElementById('modal-container')
-//
-// buttonModal.addEventListener('click', ()=> {
-//     modalContainer.classList.remove('out')
-//     modalContainer.classList.add('one')
-//     document.body.classList.add('modal-active')
-// });
-//
-// modalContainer.addEventListener('click', () => {
-//     // modalContainer.classList.remove('one')
-//     modalContainer.classList.add('out');
-//     document.body.classList.remove('modal-active')
-// })
+});
 
 
 // slider
