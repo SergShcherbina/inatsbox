@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('click', (e) => toggleMenu(e))
         document.removeEventListener('click', toggleMenu)
     }
-    menuToggle()
+
 
 // //слайдер
 // /* Индекс слайда по умолчанию */
@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
             lastScroll = scrollPosition();
         })
     }
-    hideHeader()
 
 
 //scroll animation
@@ -107,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             observer.observe(i)
         }
     }
-    scrollAnimation()
+
 
 //Timer
     function timer(id, deadline) {
@@ -165,10 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setClock(id, deadline);
     }
 
-    const deadline = new Date();
-    deadline.setDate(deadline.getDate() + 3);
-    timer('.timer', deadline);
-
 
 //modal
     const modal = () => {
@@ -189,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.remove('modal-active')
         });
     }
-    modal();
 
 
 // slider
@@ -408,6 +402,14 @@ document.addEventListener("DOMContentLoaded", () => {
         addDots()
 // swipeStart()
     }
-    slider();
 
+    menuToggle()
+    hideHeader()
+    slider();
+    modal();
+    scrollAnimation()
+
+    const deadline = new Date();
+    deadline.setDate(deadline.getDate() + 3);
+    timer('.timer', deadline);
 });

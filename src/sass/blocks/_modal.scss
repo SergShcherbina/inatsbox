@@ -6,12 +6,9 @@ body {
 
 .overlay {
   position: fixed;
-  display: table;
-  height: 100dvh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  inset: 0;
+  background-color: rgba(68, 60, 76, 0.9);
   z-index: 10;
   transform: scale(0);
 
@@ -21,7 +18,7 @@ body {
     border: none;
     box-shadow: $box-shadow;
     border-radius: 10px;
-    margin: 25vh auto;
+    margin: auto;
     max-width: 355px;
     transform: scale(0);
 
