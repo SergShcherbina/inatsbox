@@ -54,10 +54,11 @@
       }
     }
   }
+  .element-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.element-show {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 
