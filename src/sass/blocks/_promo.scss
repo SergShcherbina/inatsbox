@@ -35,8 +35,7 @@
     text-shadow: 0 0 10px #FFE7708E;
 
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in;
+    animation: show 0.5s ease-in 0.3s forwards;
 
     & > span {
       text-align: center;
@@ -51,37 +50,34 @@
     font-weight: bold;
 
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in;
-    transition-delay: 0.5s;
+    animation: show 0.5s  ease-in 0.6s forwards;
   }
 
   .smile {
     display: inline-block;
+    animation: showSmile 0.5s ease-in 2s forwards;
   }
 
-  .wrapperPromoButton {
-    width: 100%;
+  .btn {
     opacity: 0;
-    transition: all 0.5s ease-in;
-    transition-delay: 1.5s;
+    animation: show 0.5s  ease-in 1.2s forwards;
   }
 
-  .element-show {
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
-
-
-    .smile {
-      transform: scale(0);
-      animation: showSmile 0.5s ease-in 3s forwards;
-    }
   }
 }
 
 @keyframes showSmile {
   0% {
-    transform: scale(0);
+    transform: scale(1);
   }
   70% {
     transform: scale(1.5);
@@ -90,3 +86,4 @@
     transform: scale(1);
   }
 }
+

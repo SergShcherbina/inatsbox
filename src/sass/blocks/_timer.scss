@@ -1,8 +1,6 @@
 .promotion {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-in;
-  transition-delay: 1s;
+  animation: show 0.5s ease-in 0.9s forwards;
 
   &__title {
     margin: 40px 0 15px;
@@ -54,7 +52,14 @@
       }
     }
   }
-  .element-show {
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
