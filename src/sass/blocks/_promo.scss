@@ -50,40 +50,18 @@
     font-weight: bold;
 
     opacity: 0;
-    animation: show 0.5s  ease-in 0.6s forwards;
+    animation: show 0.5s ease-in 0.6s forwards;
   }
 
   .smile {
     display: inline-block;
-    animation: showSmile 0.5s ease-in 2s forwards;
+    animation: showSmile 0.5s cubic-bezier(0, 0.99, 0.98, 0.34) 3s forwards;
   }
 
   .btn {
     opacity: 0;
-    animation: show 0.5s  ease-in 1.2s forwards;
+    animation: show 0.7s ease-in 1.2s forwards;
   }
 
-}
-@keyframes show {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes showSmile {
-  0% {
-    transform: scale(1);
-  }
-  70% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 

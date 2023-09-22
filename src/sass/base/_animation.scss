@@ -1,25 +1,67 @@
-@keyframes sale {
-    from {
-        transform: scale(1);
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
     }
-    50% {
-        transform: scale(1.1);
-       color: #fbff00;
-    }
-    to {
-        transform: scale(1);
-    }
-} 
-
-
-@keyframes col {
-    from {
-        color: #000;
-    }
-    50% {
-        color: rgb(160, 31, 31);
-    }
-    to {
-        color:#000 ;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+
+@keyframes showSmile {
+    0% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+//modal
+@keyframes unfoldIn {
+    0% {
+        transform: scaleY(.005) scaleX(0);
+    }
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes unfoldOut {
+    0% {
+        transform: scaleY(1) scaleX(1);
+    }
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+    100% {
+        transform: scaleY(.005) scaleX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+

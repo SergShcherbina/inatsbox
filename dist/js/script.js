@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
             transition = true,
             nextTrf = 0,
             prevTrf = 0,
-            lastTrf = --slides.length * slideWidth,
+            lastTrf = (slides.length - 1) * slideWidth,
             posThreshold = slides[0].offsetWidth * 0.35,
             trfRegExp = /([-0-9.]+(?=px))/,
             getEvent = () => {
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 sliderTrack.style.transform = `translate3d(-${slideIndex * slideWidth}px, 0px, 0px)`;
 
                 prev.classList.toggle('disabled', slideIndex === 0);
-                next.classList.toggle('disabled', slideIndex === --slides.length);
+                next.classList.toggle('disabled', slideIndex === slides.length - 1);
             },
 
             activeDots = (count = 0) => {
