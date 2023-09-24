@@ -6,7 +6,6 @@
     display: grid;
     grid-template: auto / 358px 1fr;
     gap: 80px;
-
     border-radius: 20px;
     box-shadow: $box-shadow;
     padding: 40px;
@@ -16,7 +15,6 @@
   &__video {
     video {
       border-radius: 10px;
-
       opacity: 0;
       transition: opacity 0.5s ease-in;
     }
@@ -33,35 +31,27 @@
   &__item {
     position: relative;
     font-size: 1.2rem;
-    margin-top: 24px;
-    padding-left: 35px;
+    padding: 12px 0 12px 35px;
 
     opacity: 0;
     transform: translateY(120%);
-    transition: opacity 0.3s, transform 0.3s;
+    transition: all 0.4s cubic-bezier(0.16, 0.88, 0.81, 0.93);
 
-    &::after {
+    &::before {
       content: '✅';
       position: absolute;
-      top: 0;
+      top: 12px;
       left: 0;
-      transition: all 0.1s;
+      transition: all 0.2s;
     }
 
-    &:hover:after {
-      text-shadow: 0 0 5px $text-color;
+    &:hover:before {
+      text-shadow: 0 2px 3px $text-color;
+      transform: translateY(-2px);
     }
-  }
-
-  &__price {
-    margin-bottom: 10px;
-    width: 100%;
-    color: $text-color;
-    box-shadow: $box-shadow;
   }
 
   .element-show {
-
     .service__item {
       @for $i from 1 through 10 {
         $delay: $i * 0.2;

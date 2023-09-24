@@ -1,4 +1,4 @@
-//hide menu when scrolling
+//hide header when scrolling
 export const hideHeader = () => {
     let lastScroll = 0;
     const defaultOffset = 100;

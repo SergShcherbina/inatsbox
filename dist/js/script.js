@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   hideHeader: function() { return /* binding */ hideHeader; }
 /* harmony export */ });
-//hide menu when scrolling
+//hide header when scrolling
 const hideHeader = () => {
   let lastScroll = 0;
   const defaultOffset = 100;
@@ -530,6 +530,8 @@ document.addEventListener("DOMContentLoaded", () => {
   (0,_module_slider_js__WEBPACK_IMPORTED_MODULE_1__.slider)();
   const deadline = new Date();
   deadline.setDate(deadline.getDate() + 3);
+  deadline.setHours(deadline.getHours() - 5);
+  deadline.setMinutes(deadline.getMinutes() - 23);
   (0,_module_timer_js__WEBPACK_IMPORTED_MODULE_4__.timer)('.timer', deadline);
 });
 }();

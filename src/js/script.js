@@ -6,7 +6,6 @@ import {timer} from "./module/timer.js";
 import {modal} from "./module/modal.js"
 
 document.addEventListener("DOMContentLoaded", () => {
-
     menuToggle()
     hideHeader()
     modal();
@@ -15,5 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const deadline = new Date();
     deadline.setDate(deadline.getDate() + 3);
+    deadline.setHours(deadline.getHours() - 5);
+    deadline.setMinutes(deadline.getMinutes() - 23);
     timer('.timer', deadline);
 });

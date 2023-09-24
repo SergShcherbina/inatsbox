@@ -30,14 +30,14 @@
                 <li class="menu__item"><a href="#first" class="menu__link">Главная</a></li>
                 <li class="menu__item"><a href="#slider" class="menu__link">Фотогалерея</a></li>
                 <li class="menu__item"><a href="#offers" class="menu__link">Что предлагаем</a></li>
-                <li class="menu__item" data-trigger><a href="#" class="menu__link">Цена</a></li>
+                <li class="menu__item" data-trigger><span class="menu__link">Цена</span></li>
                 <li class="menu__item"><a href="#clients" class="menu__link">Наши клиенты</a></li>
                 <li class="menu__item"><a href="#contacts" class="menu__link">Контакты</a></li>
             </ul>
 
             <div class="burger ">
                 <span></span>
-                <span class="long"></span>
+                <span></span>
                 <span></span>
             </div>
 
@@ -136,7 +136,7 @@
                         <li class="service__item ">Отличное качество фото за наилучшую цену</li>
                         <li class="service__item ">Никаких скрытых доплат</li>
                     </ul>
-                    <button class="btn service__price" data-trigger>Стоимость аренды</button>
+                    <button class="btn liteBtn" data-trigger>Стоимость аренды</button>
                 </div>
             </div>
         </div>
@@ -186,7 +186,7 @@
         </div>
     </section>
 
-    <section class="overlay">
+    <div class="overlay">
         <div class="modal">
             <ul>
                 <li>1 час - 100 у.е.</li>
@@ -194,9 +194,9 @@
                 <li>3 часа - 150 у.е.</li>
                 <li>Каждый дополнительный час + 40 у.е. Оплата производится в белорусских рублях по курсу Н.Б.</li>
             </ul>
-            <a class="btn modalBtn" href="#form"> Оставить заявку </a>
+            <a class="btn liteBtn" href="#form"> Оставить заявку </a>
         </div>
-    </section>
+    </div>
 
 </main>
 
@@ -210,22 +210,24 @@
                         488-50-77</a></li>
                     <li class="basement__item basement__item-inst"><a
                             href="https://www.instagram.com/instabox.by/?igshid=17eky11kfcomv">@InstaBox.by</a></li>
-                    <li class="basement__item basement__item-viber"><a href="#">+375 (44) 488-50-77</a></li>
+                    <li class="basement__item basement__item-viber"><a href="viber://chat?number= [+375 (44) 488-50-77]">+375 (44) 488-50-77</a></li>
                     <li class="basement__item basement__item-email"><a
                             href="mailto:instabox@rambler.ru">Instabox@rambler.ru</a></li>
                 </ul>
             </div>
             <div class="basement__colums">
-                <h4 class="basement__title"> УСЛУГИ:</h4>
-                <ul class="basement__list">
-                    <li class="basement__item basement__item-check ">InstaBox</li>
-                    <a class="btn" href="tel:+375444885077">Позвонить</a>
-                </ul>
+                <h4 class="basement__title"> ИНФОРМАЦИЯ:</h4>
+                <span class="basement__info">
+                     Свидетельство о гос регистрации <br/> № 691948320.  И.П. Жабинская А.В. <br/> г. Минск
+                </span>
+                <a class="btn" href="tel:+375444885077">Позвонить</a>
+
             </div>
         </div>
+        <a href="https://sergshcherbina.github.io/portfolio/" class="basement__text ">&#169 your-dev.by, 2023 </a>
     </div>
 </footer>
-<script  src="js/script.js"></script>
+<script src="js/script.js"></script>
 <!--из-за динамической подгрузки -->
 <script type="module" src="js/onSubmit.js"></script>
 </body>

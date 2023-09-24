@@ -21,7 +21,7 @@ const onSubmit = () => {
             form.reset()
         } else {
             btn.textContent = 'произошла ошибка 🥴'
-            btn.style.background = 'red'
+            btn.style.background = '#e91e63'
         }
 
         setTimeout(() => {

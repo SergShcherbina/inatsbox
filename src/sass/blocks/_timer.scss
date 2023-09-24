@@ -1,6 +1,6 @@
 .promotion {
   opacity: 0;
-  animation: show 0.5s ease-in 0.9s forwards;
+  animation: show 1s cubic-bezier(0.16, 0.88, 0.81, 0.93) 0.9s forwards;
 
   &__title {
     margin: 40px 0 15px;

@@ -8,7 +8,7 @@ body {
   position: fixed;
   display: flex;
   inset: 0;
-  background-color: rgba(68, 60, 76, 0.9);
+  background-color: rgba(68, 60, 76, 0.5);
   z-index: 10;
   transform: scale(0);
 
@@ -31,15 +31,6 @@ body {
         &:last-child {
           margin-top: 10px;
         }
-      }
-    }
-
-    .modalBtn {
-      box-shadow: $box-shadow;
-      color: $text-color;
-
-      &:hover {
-        color: $light-color;
       }
     }
 

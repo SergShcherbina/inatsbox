@@ -11,13 +11,13 @@ $mail->CharSet = 'utf-8';
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'message.test.react@gmail.com';                 // Наш логин
-$mail->Password = 'password';                           // Наш пароль от ящика
+$mail->Username = 'message.test.react@gmail.com';     // Наш логин
+$mail->Password = '';                                 // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  
-$mail->setFrom('message.test.react@gmail.com', 'Instabox');   // От кого письмо
-$mail->addAddress('1990sergik27@gmail.com');          // На какой адрес отправлять
+$mail->setFrom('message.test.react@gmail.com', 'InstaBox');   // От кого письмо
+$mail->addAddress('instabox@rambler.ru');          // На какой адрес отправлять
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Данные';
