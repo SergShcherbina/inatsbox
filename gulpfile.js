@@ -70,6 +70,12 @@ gulp.task('scripts', function () {
         .pipe(browserSync.stream());
 });
 
+gulp.task('slider', function () {
+    return gulp.src("src/js/module/slider.js")
+        .pipe(gulp.dest("dist/js"))
+        .pipe(browserSync.stream());
+});
+
 gulp.task("watch", () => {
     browserSync.init({
         server: "./dist/",
@@ -86,6 +92,7 @@ gulp.task("watch", () => {
     gulp.watch("src/icons/**/*").on('all', gulp.parallel('icons'));
     gulp.watch("src/mailer/**/*").on('all', gulp.parallel('mailer'));
     gulp.watch("src/js/module/onSubmit.js").on('change', gulp.parallel('scripts'));
+    gulp.watch("src/js/module/slider.js").on('change', gulp.parallel('slider'));
 });
 
 gulp.task("build-js", () => {
@@ -121,7 +128,7 @@ gulp.task("build-js", () => {
         .on("end", browserSync.reload);
 });
 
-gulp.task("build", gulp.parallel("copy-html", "styles", "fonts", "video", "images", "mailer", "icons", "build-js", "scripts"));
+gulp.task("build", gulp.parallel("copy-html", "styles", "fonts", "video", "images", "mailer", "icons", "build-js", "scripts", "slider"));
 
 gulp.task("build-prod-js", () => {
     return gulp.src("./src/js/index.js")

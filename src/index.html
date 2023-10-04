@@ -14,6 +14,7 @@
     <link rel="icon" href="https://instabox.by/wp-content/uploads/2019/08/cropped-logo-32x32.png" sizes="32x32">
 
     <link rel="stylesheet" href="css/style.min.css">
+<!--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slider@10/slider-bundle.min.css"/>-->
 
 </head>
 <body>
@@ -90,25 +91,19 @@
     <section class="slider__instabox" id="slider">
         <div class="container">
             <h2 class="title">Фотогалерея</h2>
-            <div class="slider element-animation">
-                <div class="slider-list">
-                    <div class="slider-track">
-                        <div class="slide"><img src="img/works/1.jpg" alt="1"/></div>
-                        <div class="slide"><img src="img/works/2.jpg" alt="2"/></div>
-                        <div class="slide"><img src="img/works/3.jpg" alt="3"/></div>
-                        <div class="slide"><img src="img/works/4.jpg" alt="4"/></div>
-                        <div class="slide"><img src="img/works/5.jpg" alt="5"/></div>
-                        <div class="slide"><img src="img/works/6.jpg" alt="6"/></div>
-                        <div class="slide"><img src="img/works/7.jpg" alt="7"/></div>
-                        <div class="slide"><img src="img/works/8.jpg" alt="8"/></div>
-                        <div class="slide"><img src="img/works/9.jpg" alt="9"/></div>
-                        <div class="slide"><img src="img/works/10.jpg" alt="10"/></div>
-                    </div>
+            <div class="swiper element-animation">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/works/1.jpg" alt="1"/></div>
+                    <div class="swiper-slide"><img src="img/works/2.jpg" alt="2"/></div>
+                    <div class="swiper-slide"><img src="img/works/3.jpg" alt="3"/></div>
+                    <div class="swiper-slide"><img src="img/works/4.jpg" alt="4"/></div>
+                    <div class="swiper-slide"><img src="img/works/5.jpg" alt="5"/></div>
+                    <div class="swiper-slide"><img src="img/works/6.jpg" alt="6"/></div>
+                    <div class="swiper-slide"><img src="img/works/7.jpg" alt="7"/></div>
+                    <div class="swiper-slide"><img src="img/works/8.jpg" alt="8"/></div>
+                    <div class="swiper-slide"><img src="img/works/9.jpg" alt="9"/></div>
                 </div>
-                <div class="slider-arrows">
-                    <button type="button" class="prev disabled">&larr;</button>
-                    <button type="button" class="next">&rarr;</button>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -210,7 +205,8 @@
                         488-50-77</a></li>
                     <li class="basement__item basement__item-inst"><a
                             href="https://www.instagram.com/instabox.by/?igshid=17eky11kfcomv">@InstaBox.by</a></li>
-                    <li class="basement__item basement__item-viber"><a href="viber://chat?number= [+375 (44) 488-50-77]">+375 (44) 488-50-77</a></li>
+                    <li class="basement__item basement__item-viber"><a
+                            href="viber://chat?number= [+375 (44) 488-50-77]">+375 (44) 488-50-77</a></li>
                     <li class="basement__item basement__item-email"><a
                             href="mailto:instabox@rambler.ru">Instabox@rambler.ru</a></li>
                 </ul>
@@ -224,12 +220,14 @@
 
             </div>
         </div>
-        <a href="https://sergshcherbina.github.io/portfolio/" class="basement__text ">&#169 your-dev.by, 2023 </a>
+        <a href="https://sergshcherbina.github.io/portfolio/" class="basement__text ">&#169 разработка сайта -
+            your-dev.by, 2023</a>
     </div>
 </footer>
 <script src="js/script.js"></script>
 <!--из-за динамической подгрузки -->
 <script type="module" src="js/onSubmit.js"></script>
+<script type="module" src="js/slider.js"></script>
 </body>
 
 </html>
