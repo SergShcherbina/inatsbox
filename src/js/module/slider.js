@@ -14,13 +14,14 @@ const slider = new Swiper(".swiper", {
     keyboard: {
         enabled: true
     },
-    mousewheel: {
-        thresholdDelta: 70
-    },
+    slideToClickedSlide: true,
+    // mousewheel: {
+    //     thresholdDelta: 70
+    // },
     loop: true,
     pagination: {
         el: ".swiper-pagination",
-        clickable: true
+        clickable: true,
     },
     breakpoints: {
         768: {
@@ -29,5 +30,5 @@ const slider = new Swiper(".swiper", {
         1560: {
             slidesPerView: 2
         }
-    }
+    },
 });
