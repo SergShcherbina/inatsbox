@@ -6,19 +6,19 @@ const slider = new Swiper(".swiper", {
     centeredSlides: true,
     coverflowEffect: {
         rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 3,
-        slideShadows: true
+        // stretch: 0,
+        // depth: 100,
+        modifier: 10,
+        // slideShadows: true
     },
     keyboard: {
-        enabled: true
+        enabled: true,
     },
-    slideToClickedSlide: true,
     // mousewheel: {
     //     thresholdDelta: 70
     // },
-    loop: true,
+    // loop: true,
+    slideToClickedSlide: true,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
