@@ -10,6 +10,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import rename from "gulp-rename";
 import imagemin from 'gulp-imagemin';
 import htmlmin from 'gulp-htmlmin';
+import webp from 'gulp-webp';
 
 const dist = "./dist/";
 const sass = gulpSass(dartSass);
@@ -50,15 +51,17 @@ gulp.task('mailer', function () {
 });
 
 gulp.task('images', function () {
-    return gulp.src("src/img/**/*.+(png|jpeg|gig|svg)")
-        .pipe(imagemin())
+    return gulp.src("src/img/**/*.+(png|jpeg|gig|svg|jpg)")
+        // .pipe(imagemin())
+        .pipe(webp())
         .pipe(gulp.dest("dist/img"))
         .pipe(browserSync.stream());
 });
 
 gulp.task('icons', function () {
-    return gulp.src("src/icons/**/*.+(png|jpeg|gig|svg)")
-        .pipe(imagemin())
+    return gulp.src("src/icons/**/*.+(png|jpeg|gig|svg|jpg)")
+        // .pipe(imagemin())
+        .pipe(webp())
         .pipe(gulp.dest("dist/icons"))
         .pipe(browserSync.stream());
 });
