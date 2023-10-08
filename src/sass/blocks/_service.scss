@@ -4,7 +4,7 @@
 
   &__wrapper {
     display: grid;
-    grid-template: auto / 358px 1fr;
+    grid-template: auto / 363px 1fr;
     gap: 80px;
     border-radius: 20px;
     box-shadow: $box-shadow;
@@ -42,12 +42,14 @@
       position: absolute;
       top: 12px;
       left: 0;
+      text-shadow: 0 2px 3px $text-color;
+      transform: translateY(-2px);
       transition: all 0.2s;
     }
 
     &:hover:before {
-      text-shadow: 0 2px 3px $text-color;
-      transform: translateY(-2px);
+      text-shadow: none;
+      transform: translateY(0px);
     }
   }
 
