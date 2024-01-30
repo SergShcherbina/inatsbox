@@ -192,11 +192,19 @@ function timer(id, deadline) {
       if (t.total <= 0) {
         //если счетчик прошел свое время,
         clearInterval(timeInterval); //сбрасываем вызов функции updateClock
+
+        document.querySelector('.promotion__title').innerText = 'Акция закончилась ';
+        document.querySelector('.btn').innerText = 'Оставить заявку';
       }
     }
   }
-
   setClock(id, deadline);
+  const milliseconds = Date.parse(deadline) - Date.parse(new Date());
+  if (milliseconds < -150000) {
+    localStorage.setItem('timer', null);
+  } else {
+    localStorage.setItem('timer', deadline);
+  }
 }
 
 /***/ })
@@ -280,10 +288,15 @@ document.addEventListener("DOMContentLoaded", () => {
   (0,_module_modal_js__WEBPACK_IMPORTED_MODULE_4__.modal)();
   (0,_module_scrollAnimation_js__WEBPACK_IMPORTED_MODULE_2__.scrollAnimation)();
   const deadline = new Date();
-  deadline.setDate(deadline.getDate() + 3);
-  deadline.setHours(deadline.getHours() - 5);
-  deadline.setMinutes(deadline.getMinutes() - 23);
-  (0,_module_timer_js__WEBPACK_IMPORTED_MODULE_3__.timer)('.timer', deadline);
+  deadline.setDate(deadline.getDate() + 1);
+  deadline.setHours(deadline.getHours() - 23);
+  deadline.setMinutes(deadline.getMinutes() - 59);
+  const date = localStorage.getItem('timer');
+  if (date == null || date === "null") {
+    (0,_module_timer_js__WEBPACK_IMPORTED_MODULE_3__.timer)('.timer', deadline);
+  } else {
+    (0,_module_timer_js__WEBPACK_IMPORTED_MODULE_3__.timer)('.timer', date);
+  }
 });
 }();
 /******/ })()
