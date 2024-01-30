@@ -10,8 +10,7 @@
       overflow: clip;
       list-style: none;
       opacity: 0;
-      transform: translateX(50%);
-      transition: all 0.5s;
+      transition: all 1s;
     }
 
     .swiper-wrapper {
@@ -254,7 +253,6 @@
     //animation
     .element-show {
       opacity: 1;
-      transform: translateX(0);
     }
   }
 }

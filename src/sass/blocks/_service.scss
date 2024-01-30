@@ -34,8 +34,8 @@
     padding: 12px 0 12px 35px;
 
     opacity: 0;
-    transform: translateY(120%);
-    transition: all 0.4s cubic-bezier(0.16, 0.88, 0.81, 0.93);
+    transform: translateY(50%);
+    transition: opacity 0.5s, transform 1s cubic-bezier(0.16, 0.88, 0.81, 0.93);
 
     &::before {
       content: '✅';

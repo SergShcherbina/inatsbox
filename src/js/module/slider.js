@@ -17,7 +17,7 @@ const slider = new Swiper(".swiper", {
     // mousewheel: {
     //     thresholdDelta: 70
     // },
-    // loop: true,
+    loop: true,
     slideToClickedSlide: true,
     pagination: {
         el: ".swiper-pagination",
