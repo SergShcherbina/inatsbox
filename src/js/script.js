@@ -11,8 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollAnimation()
 
     const deadline = new Date();
-    deadline.setDate(deadline.getDate() + 3);
-    deadline.setHours(deadline.getHours() - 5);
-    deadline.setMinutes(deadline.getMinutes() - 23);
-    timer('.timer', deadline);
+        deadline.setDate(deadline.getDate() + 1);
+        deadline.setHours(deadline.getHours() - 23);
+        deadline.setMinutes(deadline.getMinutes() - 59);
+
+    const date = localStorage.getItem('timer')
+
+    if( date == null || date === "null" ) {
+        timer('.timer', deadline)
+    } else {
+        timer('.timer', date)
+    }
 });

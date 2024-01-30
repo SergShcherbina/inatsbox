@@ -46,9 +46,20 @@ export function timer(id, deadline) {
             seconds.innerHTML = getZiro(t.seconds);
             if (t.total <= 0) {                                              //если счетчик прошел свое время,
                 clearInterval(timeInterval);                                 //сбрасываем вызов функции updateClock
+
+                document.querySelector('.promotion__title').innerText = 'Акция закончилась ';
+                document.querySelector('.btn').innerText = 'Оставить заявку';
             }
         }
     }
 
     setClock(id, deadline);
+
+    const milliseconds = Date.parse(deadline) - Date.parse(new Date());
+
+    if(milliseconds < -150000) {
+        localStorage.setItem('timer', null);
+    } else {
+        localStorage.setItem('timer', deadline);
+    }
 }
